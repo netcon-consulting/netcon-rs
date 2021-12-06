@@ -1,5 +1,5 @@
 [package]
-name = "netcon-rs"
+name = "netcon"
 authors = ["Björn Guth <b.guth@netcon-consulting.com>"]
 description = "A collections of tools and helper functions developed for and by NetCon Unternehmensberatung GmbH"
 readme = "README.md"
@@ -10,3 +10,7 @@ license = "AGPL-3.0-or-later"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+log = { version = "^0.4", optional = true }
+
+[features]
+threadpool = ["log"]
