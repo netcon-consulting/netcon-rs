@@ -1,0 +1,12 @@
+[package]
+name = "netcon-rs"
+authors = ["Björn Guth <b.guth@netcon-consulting.com>"]
+description = "A collections of tools and helper functions developed for NetCon Unternehmensberatung GmbH"
+readme = "README.md"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
