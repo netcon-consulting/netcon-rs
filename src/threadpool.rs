@@ -12,7 +12,7 @@
 //! ```rust
 //! let threadpool = netcon::threadpool::ThreadPool::new(4).unwrap();
 //!
-//! for id in 1..10_u32 {
+//! for id in 0..10_u32 {
 //!     threadpool.execute(move || println!("Hello from task {}", id));
 //! }
 //! ```
@@ -130,6 +130,14 @@ pub struct ThreadPool {
 impl ThreadPool {
     /// Create a new `ThreadPool` with `size` number of workers.
     ///
+    /// # Example
+    ///
+    /// Creating a new [`ThreadPool`] with one worker:
+    ///
+    /// ```
+    /// let threadpool = netcon::threadpool::ThreadPool::new(1).unwrap();
+    /// ```
+    ///
     /// # Errors
     ///
     /// When `size` is below 1, `ThreadPool::new` returns an [`ThreadPoolError::SizeToLow`]
@@ -153,6 +161,18 @@ impl ThreadPool {
 
 impl ThreadPool {
     /// Send a task to be run by a worker, once one is available.
+    ///
+    /// # Examples
+    ///
+    /// Running ten simple tasks in a [`ThreadPool`]:
+    ///
+    /// ```rust
+    /// let threadpool = netcon::threadpool::ThreadPool::new(4).unwrap();
+    ///
+    /// for id in 0..10_u32 {
+    ///     threadpool.execute(move || println!("Hello from task {}", id));
+    /// }
+    /// ```
     ///
     /// # Errors
     ///
@@ -227,7 +247,7 @@ mod tests {
         let n_tasks: usize = 100;
         let mut ref_vec = Vec::with_capacity(n_tasks);
         let result_vec = Arc::new(Mutex::new(Vec::with_capacity(n_tasks)));
-        for i in 1..n_tasks {
+        for i in 0..n_tasks {
             ref_vec.push(i.pow(2));
             let result_vec = result_vec.clone();
             threadpool
