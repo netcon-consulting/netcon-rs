@@ -5,8 +5,12 @@ Unternehmensberatung GmbH.
 
 ## Usage
 
-To use this library, just add the path to this repository to the dependencies
-section of your `Cargo.toml`.
+To use this library, just add the following to this repository to the
+dependencies section of your `Cargo.toml`.
+
+```toml
+netcon = "^0.1"
+```
 
 ### Features
 
@@ -18,7 +22,9 @@ dependencies as low as possible. The following features are available:
 
 ## Documentation
 
-To build the documentation, run `cargo doc --all-features`. This builds the
+The documentation for this crate can be found on
+[docs.rs](https://docs.rs/netcon/latest/netcon/). Alternatively, too build the
+documentation locally, run `cargo doc --all-features`. This builds the
 documentation including all optional features.
 
 ## Tests
